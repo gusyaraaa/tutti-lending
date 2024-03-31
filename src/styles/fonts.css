@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Somic';
+  font-weight: 400;
+  src: url('$fonts/somic/NTSomic-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somic';
+  font-weight: 500;
+  src: url('$fonts/somic/NTSomic-Medium.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somic';
+  font-weight: 600;
+  src: url('$fonts/somic/NTSomic-SemiBold.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Somic';
+  font-weight: 700;
+  src: url('$fonts/somic/NTSomic-Bold.otf') format('opentype');
+  font-display: swap;
+}
