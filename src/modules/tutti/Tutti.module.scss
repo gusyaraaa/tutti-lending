@@ -1,0 +1,35 @@
+.wrapper {
+  padding-top: 170px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 1041px;
+    background: top / cover no-repeat url('/src/assets/radial-bg.svg');
+    box-shadow: inset 0 0 50px rgba(16, 16, 16, 0.7);
+    z-index: -1;
+  }
+
+  .title {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    margin-bottom: 51px;
+  }
+
+  .proposition {
+    padding-bottom: 162px;
+
+    .propositionTitle {
+      margin-bottom: 37px;
+    }
+    .propositionTabs {
+      margin-bottom: 41px;
+    }
+  }
+}

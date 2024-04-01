@@ -1,0 +1,26 @@
+.wrapper {
+  height: 270px;
+  padding: 70px;
+  border-radius: 20px;
+  background-color: #1a1a1a !important;
+
+  &--unlock {
+    background: right no-repeat url('/src/assets/unlock.svg');
+  }
+  &--enable {
+    background: right no-repeat url('/src/assets/enable.svg');
+  }
+  &--leverage {
+    background: right no-repeat url('/src/assets/leverage.svg');
+  }
+  &--auto-degen {
+    background: right no-repeat url('/src/assets/auto-degen.svg');
+  }
+
+  .title {
+    margin-bottom: 16px;
+  }
+  .description {
+    font-family: 'Aber Mono', sans-serif;
+  }
+}

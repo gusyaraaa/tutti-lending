@@ -1,0 +1,25 @@
+.wrapper {
+  height: 540px;
+  padding: 60px;
+  background-color: #101010;
+  border: 1px solid #1a1a1a;
+  border-radius: 16px;
+  text-align: center;
+
+  &--protocol-bg {
+    background: center / cover no-repeat url('/src/assets/protocol-bg.png');
+  }
+  &--quantium-bg {
+    background: center / cover no-repeat url('/src/assets/quantium-bg.png');
+  }
+  &--gearbox-bg {
+    background: center / cover no-repeat url('/src/assets/gearbox-bg.png');
+  }
+  &--evm-bg {
+    background: center / cover no-repeat url('/src/assets/evm-bg.png');
+  }
+
+  .title {
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,39 @@
+.wrapper {
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-bottom: 16px;
+
+    .tag {
+      height: 60px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      border-radius: 40px;
+      border: 1px solid #2f80ed;
+    }
+  }
+
+  .card {
+    height: 695px;
+    padding: 60px 40px 0;
+    background-color: #101010;
+    border: 1px solid #333333;
+    border-radius: 16px;
+
+    &--bitcoin {
+      background: bottom / contain no-repeat url('/src/assets/bitcoin.png');
+    }
+    &--evm {
+      background: bottom / contain no-repeat url('/src/assets/evm.png');
+    }
+    &--gearbox {
+      background: bottom / contain no-repeat url('/src/assets/gearbox.png');
+    }
+  }
+
+  .title {
+    margin-bottom: 16px;
+  }
+}

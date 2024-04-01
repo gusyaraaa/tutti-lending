@@ -1,0 +1,42 @@
+.wrapper {
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px;
+    border-bottom: 1px solid #333333;
+
+    .logo {
+      flex: 1 0 auto;
+    }
+
+    .pageLinks {
+      flex: 0 1 auto;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      p {
+        cursor: pointer;
+      }
+    }
+  }
+  .additional {
+    padding: 24px 0 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .agreements {
+      display: flex;
+      gap: 24px;
+
+      > div {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

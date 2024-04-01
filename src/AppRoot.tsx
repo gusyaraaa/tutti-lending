@@ -1,7 +1,19 @@
-import 'styles/fonts.css'
-import 'styles/global.css'
-import 'styles/vars.css'
+import { AppLayout } from 'shared/ui/layout/AppLayout'
+
+import { Tutti } from 'modules/tutti'
+import { Utility } from 'modules/utility'
+import { ActorsFlows } from 'modules/actorsFlows'
+
+import 'styles/fonts.scss'
+import 'styles/global.scss'
+import 'styles/variables.scss'
 
 export const AppRoot = () => {
-  return <p>Server is listening on port 3000</p>
+  return (
+    <AppLayout>
+      <Tutti />
+      <Utility />
+      <ActorsFlows />
+    </AppLayout>
+  )
 }

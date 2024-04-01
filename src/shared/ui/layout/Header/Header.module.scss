@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 110px;
+}
+
+.logo {
+  flex: 1 0 auto;
+}
+
+.pageLinks {
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  p {
+    cursor: pointer;
+  }
+}

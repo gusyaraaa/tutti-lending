@@ -1,0 +1,57 @@
+.wrapper {
+  padding-top: 152px;
+  padding-bottom: 160px;
+
+  .sectionTitle {
+    width: fit-content;
+    margin: 0 auto 60px;
+    padding: 16px 25px;
+    font-family: 'Aber Mono', sans-serif;
+    color: var(--colorSectionGold);
+    border-radius: 40px;
+    border: 1px solid var(--colorSectionGold);
+  }
+  .title {
+    margin-bottom: 81px;
+    text-align: center;
+  }
+  .actors {
+    position: relative;
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+
+    > div {
+      flex: 1 1 49%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -234px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 580px;
+      height: 235px;
+      background: url('/src/assets/actorsFlows-line.svg');
+    }
+
+    .subsectionTitle {
+      position: absolute;
+      bottom: -294px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: fit-content;
+      padding: 16px 32px;
+      font-family: 'Aber Mono', sans-serif;
+      border-radius: 40px;
+      border: 1px solid #fff;
+    }
+  }
+  .flows {
+    padding-top: 404px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+}
