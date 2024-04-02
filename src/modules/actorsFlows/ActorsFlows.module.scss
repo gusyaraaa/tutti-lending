@@ -16,6 +16,7 @@
     text-align: center;
   }
   .actors {
+    padding-bottom: 284px;
     position: relative;
     display: flex;
     gap: 2px;
@@ -25,20 +26,27 @@
       flex: 1 1 49%;
     }
 
+    .actorsRef {
+      position: absolute;
+      top: calc(100% - 50px);
+    }
+
     &::after {
       content: '';
       position: absolute;
-      bottom: -234px;
+      top: calc(100% - 284px);
       left: 50%;
       transform: translateX(-50%);
       width: 580px;
-      height: 235px;
+      height: 0;
       background: url('/src/assets/actorsFlows-line.svg');
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out, height 0.8s ease-in-out;
     }
 
     .subsectionTitle {
       position: absolute;
-      bottom: -294px;
+      top: calc(100% - 50px);
       left: 50%;
       transform: translateX(-50%);
       width: fit-content;
@@ -46,12 +54,28 @@
       font-family: 'Aber Mono', sans-serif;
       border-radius: 40px;
       border: 1px solid #fff;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    &-visible::after {
+      opacity: 1;
+      height: 235px;
+    }
+    &-visible > .subsectionTitle {
+      opacity: 1;
     }
   }
   .flows {
-    padding-top: 404px;
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     gap: 100px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+
+    &-visible {
+      opacity: 1;
+    }
   }
 }

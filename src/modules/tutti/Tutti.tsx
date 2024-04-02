@@ -1,10 +1,17 @@
+import cns from 'classnames'
+
 import { Text } from 'shared/ui/common/Text'
 import { Tab, Tabs } from 'shared/ui/common/Tabs'
+import { useVisibleOnScroll } from 'shared/hooks/useVisibleOnScroll'
 import { PropositionCard } from './ui/PropositionCard/PropositionCard'
 
 import s from './Tutti.module.scss'
 
 export const Tutti = () => {
+  const { ref: propositionRef, isVisible } = useVisibleOnScroll({
+    threshold: 0.4,
+  })
+
   return (
     <div className={s.wrapper}>
       <div className={s.title}>
@@ -15,7 +22,12 @@ export const Tutti = () => {
           For native bitcoin to EVM chains without a bridge.
         </Text>
       </div>
-      <div className={s.proposition}>
+      <div
+        ref={propositionRef}
+        className={cns(s.proposition, {
+          [s['proposition--visible']]: isVisible,
+        })}
+      >
         <Text
           size={32}
           weight={700}

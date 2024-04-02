@@ -32,6 +32,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: inherit;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 20px;
+  }
 }
 
 html,
@@ -42,6 +53,7 @@ body {
   min-height: 100%;
   width: 100%;
   flex: 1 0 auto;
+  scroll-behavior: smooth;
 }
 
 html.html-scroll-lock {
@@ -98,4 +110,7 @@ input, textarea, button, select, label, a {
 img, embed, iframe, object, audio, video {
   max-width: 100%;
   height: auto;
+}
+a {
+  text-decoration: none;
 }

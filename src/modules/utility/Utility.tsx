@@ -1,12 +1,24 @@
 import cns from 'classnames'
 
 import { Text } from 'shared/ui/common/Text'
+import { useVisibleOnScroll } from 'shared/hooks/useVisibleOnScroll'
 
 import UtilitySVG from 'assets/utility.svg'
 
 import s from './Utility.module.scss'
 
 export const Utility = () => {
+  const { ref: stakersRef, isVisible: isStakersVisible } = useVisibleOnScroll({
+    threshold: 0.7,
+  })
+  const { ref: incentiveRef, isVisible: isIncentiveVisible } =
+    useVisibleOnScroll({
+      threshold: 0.7,
+    })
+  const { ref: votingRef, isVisible: isVotingVisible } = useVisibleOnScroll({
+    threshold: 0.7,
+  })
+
   return (
     <div className={s.wrapper}>
       <Text size={16} weight={700} className={s.sectionTitle}>
@@ -27,7 +39,12 @@ export const Utility = () => {
           UTILITY
         </Text>
         <UtilitySVG className={s.image} />
-        <div className={cns(s.card, s['card--stakers'])}>
+        <div
+          ref={stakersRef}
+          className={cns(s.card, s['card--stakers'], {
+            [s['card-visible']]: isStakersVisible,
+          })}
+        >
           <Text size={24} weight={700}>
             Stakers
           </Text>
@@ -36,7 +53,12 @@ export const Utility = () => {
             (optional).
           </Text>
         </div>
-        <div className={cns(s.card, s['card--incentive'])}>
+        <div
+          ref={incentiveRef}
+          className={cns(s.card, s['card--incentive'], {
+            [s['card-visible']]: isIncentiveVisible,
+          })}
+        >
           <Text size={24} weight={700}>
             Incentive
           </Text>
@@ -45,7 +67,12 @@ export const Utility = () => {
             time lock (optional)
           </Text>
         </div>
-        <div className={cns(s.card, s['card--voting'])}>
+        <div
+          ref={votingRef}
+          className={cns(s.card, s['card--voting'], {
+            [s['card-visible']]: isVotingVisible,
+          })}
+        >
           <Text size={24} weight={700}>
             Voting
           </Text>
