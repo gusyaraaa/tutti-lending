@@ -18,6 +18,7 @@ type TextSize =
   | 36
   | 40
   | 44
+  | 48
   | 64
 type TextWeight = 400 | 500 | 600 | 700
 type TextColor = 'default' | 'secondary' | 'dark'

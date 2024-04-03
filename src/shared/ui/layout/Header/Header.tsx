@@ -1,53 +1,60 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
+import cns from 'classnames'
 
-import { Text } from 'shared/ui/common/Text'
+import { useMediaBreakpoints } from 'shared/hooks/useMediaBreakpoints'
+import { HeaderLink } from './ui/HeaderLink'
 
 import LogoSVG from 'assets/logo.svg'
 
 import s from './Header.module.scss'
 
 const AppHeader = () => {
+  const { isMobile } = useMediaBreakpoints()
+  const [isVisibleMenu, setIsVisibleMenu] = useState(false)
+
+  const handleLinkClick = () => {
+    setIsVisibleMenu(false)
+  }
+
   return (
-    <div className={s.wrapper}>
+    <div className={cns(s.wrapper, { [s['wrapper-active']]: isVisibleMenu })}>
       <div className={s.content}>
         <div className={s.logo}>
           <LogoSVG
             onClick={() => {
+              setIsVisibleMenu(false)
               window.scrollTo({ top: 0 })
             }}
           />
         </div>
-        <div className={s.pageLinks}>
-          <a href="#">
-            <Text size={16} className={s.link}>
+        <div className={cns(s.menu, { [s['menu-active']]: isVisibleMenu })}>
+          {isMobile && (
+            <div
+              className={s.hamburger}
+              onClick={() => setIsVisibleMenu(!isVisibleMenu)}
+            />
+          )}
+
+          <div className={s.pageLinks}>
+            <HeaderLink href="#" onClick={handleLinkClick}>
               $Tutti
-            </Text>
-          </a>
-          <a href="#actors">
-            <Text size={16} className={s.link}>
+            </HeaderLink>
+            <HeaderLink href="#actors" onClick={handleLinkClick}>
               Actors
-            </Text>
-          </a>
-          <a href="#flows">
-            <Text size={16} className={s.link}>
+            </HeaderLink>
+            <HeaderLink href="#flows" onClick={handleLinkClick}>
               Flows
-            </Text>
-          </a>
-          <a href="#use-cases">
-            <Text size={16} className={s.link}>
+            </HeaderLink>
+            <HeaderLink href="#use-cases" onClick={handleLinkClick}>
               Use cases
-            </Text>
-          </a>
-          <a href="#lightpaper">
-            <Text size={16} className={s.link}>
+            </HeaderLink>
+            <HeaderLink href="#lightpaper" onClick={handleLinkClick}>
               Lightpaper
-            </Text>
-          </a>
-          <a href="#contact">
-            <Text size={16} className={s.link}>
+            </HeaderLink>
+            <HeaderLink href="#contact" onClick={handleLinkClick}>
               Contact
-            </Text>
-          </a>
+            </HeaderLink>
+          </div>
         </div>
       </div>
     </div>

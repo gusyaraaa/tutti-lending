@@ -10,7 +10,7 @@ export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
     <div className={s.wrapper}>
       <div className={s.inner}>
         <Header />
-        <div className={s.content}>{children}</div>
+        <div>{children}</div>
         <Footer />
       </div>
     </div>

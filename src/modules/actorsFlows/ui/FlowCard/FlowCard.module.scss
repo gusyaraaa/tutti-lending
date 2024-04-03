@@ -32,8 +32,48 @@
       background: bottom / contain no-repeat url('/src/assets/gearbox.png');
     }
   }
+  .cardTitle,
+  .cardDescription {
+    margin-bottom: 8px;
+  }
+}
 
-  .title {
-    margin-bottom: 16px;
+@media screen and (max-width: $mobile) {
+  .wrapper {
+    .title {
+      margin-bottom: 10;
+    }
+    .card {
+      height: 600px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .wrapper {
+    .title {
+      flex-direction: column;
+      align-items: start;
+      gap: 8px;
+      margin-bottom: 18;
+
+      .tag {
+        height: 40px;
+      }
+    }
+    .card {
+      height: 200px;
+      padding: 29px 4px;
+
+      &--bitcoin {
+        background: center / contain no-repeat url('/src/assets/bitcoin.png');
+      }
+      &--evm {
+        background: center / contain no-repeat url('/src/assets/evm.png');
+      }
+      &--gearbox {
+        background: center / contain no-repeat url('/src/assets/gearbox.png');
+      }
+    }
   }
 }

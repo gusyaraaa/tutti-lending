@@ -34,14 +34,16 @@
     &::after {
       content: '';
       position: absolute;
-      top: calc(100% - 284px);
+      top: calc(100% - 284px * 2);
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, 0);
       width: 580px;
-      height: 0;
-      background: url('/src/assets/actorsFlows-line.svg');
+      height: 235px;
+      background: top / contain no-repeat
+        url('/src/assets/actorsFlows-line.svg');
       opacity: 0;
-      transition: opacity 0.8s ease-in-out, height 0.8s ease-in-out;
+      transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+      z-index: -1;
     }
 
     .subsectionTitle {
@@ -60,7 +62,7 @@
 
     &-visible::after {
       opacity: 1;
-      height: 235px;
+      transform: translate(-50%, 284px);
     }
     &-visible > .subsectionTitle {
       opacity: 1;
@@ -76,6 +78,81 @@
 
     &-visible {
       opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: $desktopSmall) {
+  .wrapper {
+    padding-top: 119px;
+    padding-bottom: 230px;
+    .flows {
+      padding-top: 179px;
+    }
+  }
+}
+
+@media screen and (max-width: $laptop) {
+  .wrapper {
+    padding-top: 150px;
+    padding-bottom: 170px;
+    .title {
+      margin-bottom: 75px;
+    }
+    .flows {
+      padding-top: 130px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .wrapper {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    .title {
+      margin-bottom: 81px;
+    }
+    .actors {
+      &::after {
+        width: 396px;
+      }
+      .subsectionTitle {
+        top: calc(100% - 120px);
+      }
+    }
+    .flows {
+      padding-top: 76px;
+      gap: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .wrapper {
+    padding-top: 90px;
+    padding-bottom: 110px;
+    .title {
+      margin-bottom: 51px;
+    }
+    .actors {
+      gap: 20px;
+      padding-bottom: 153px;
+
+      &::after {
+        top: calc(100% - 153px - 102px * 2);
+        background: top / contain no-repeat
+          url('/src/assets/actorsFlows-line-mobile.svg');
+      }
+      .subsectionTitle {
+        top: calc(100% - 90px);
+      }
+      &-visible::after {
+        transform: translate(-50%, 102px);
+      }
+    }
+    .flows {
+      padding-top: 70px;
+      gap: 40px;
     }
   }
 }

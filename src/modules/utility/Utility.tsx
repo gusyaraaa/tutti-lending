@@ -2,21 +2,23 @@ import cns from 'classnames'
 
 import { Text } from 'shared/ui/common/Text'
 import { useVisibleOnScroll } from 'shared/hooks/useVisibleOnScroll'
+import { useMediaBreakpoints } from 'shared/hooks/useMediaBreakpoints'
 
 import UtilitySVG from 'assets/utility.svg'
 
 import s from './Utility.module.scss'
 
 export const Utility = () => {
+  const { isMobile, isTablet } = useMediaBreakpoints()
   const { ref: stakersRef, isVisible: isStakersVisible } = useVisibleOnScroll({
-    threshold: 0.7,
+    threshold: isMobile ? 0.3 : 0.5,
   })
   const { ref: incentiveRef, isVisible: isIncentiveVisible } =
     useVisibleOnScroll({
-      threshold: 0.7,
+      threshold: isMobile ? 0.3 : 0.9,
     })
   const { ref: votingRef, isVisible: isVotingVisible } = useVisibleOnScroll({
-    threshold: 0.7,
+    threshold: isMobile ? 0.3 : 0.7,
   })
 
   return (
@@ -25,7 +27,7 @@ export const Utility = () => {
         Utility
       </Text>
       <div className={s.title}>
-        <Text size={32} weight={700} isUppercased>
+        <Text size={isMobile ? 20 : 32} weight={700} isUppercased>
           Tutti is a governance minimized,
           <br />
           cross-chain liquidity primitive.
@@ -35,7 +37,11 @@ export const Utility = () => {
         </Text>
       </div>
       <div className={s.content}>
-        <Text size={64} weight={700} isUppercased>
+        <Text
+          size={isMobile ? 28 : isTablet ? 48 : 64}
+          weight={700}
+          isUppercased
+        >
           UTILITY
         </Text>
         <UtilitySVG className={s.image} />

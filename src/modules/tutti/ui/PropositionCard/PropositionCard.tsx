@@ -1,6 +1,7 @@
 import cns from 'classnames'
 
 import { Text } from 'shared/ui/common/Text'
+import { useMediaBreakpoints } from 'shared/hooks/useMediaBreakpoints'
 
 import s from './PropositionCard.module.scss'
 
@@ -11,12 +12,18 @@ type Props = {
 }
 
 export const PropositionCard = ({ title, description, iconId }: Props) => {
+  const { isMobile } = useMediaBreakpoints()
+
   return (
     <div className={cns(s.wrapper, s[`wrapper--${iconId}`])}>
-      <Text size={32} weight={700} className={s.title}>
+      <Text size={isMobile ? 24 : 32} weight={700} className={s.title}>
         {title}
       </Text>
-      <Text size={24} color="secondary" className={s.description}>
+      <Text
+        size={isMobile ? 16 : 24}
+        color="secondary"
+        className={s.description}
+      >
         {description}
       </Text>
     </div>

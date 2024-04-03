@@ -2,12 +2,12 @@
   display: flex;
   width: fit-content;
   gap: 21px;
-  margin: 0 auto 50px;
+  margin: 0 auto 41px;
   padding: 8px 16px;
   border-radius: 40px;
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
-  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
 }
 
 .tab {
@@ -42,6 +42,39 @@
     &::after {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .tabs {
+    gap: 38px;
+    margin-bottom: 78px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .tabs {
+    position: relative;
+    left: calc(var(--containerMobilePadding) * -1);
+    width: 100vw;
+    border-radius: 0;
+    gap: 8px;
+    margin: 0 auto 40px;
+    background-color: inherit;
+    box-shadow: none;
+    backdrop-filter: none;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    .tab {
+      background-color: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 40px;
     }
   }
 }

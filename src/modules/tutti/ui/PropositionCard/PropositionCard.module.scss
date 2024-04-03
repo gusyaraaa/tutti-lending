@@ -24,3 +24,35 @@
     font-family: 'Aber Mono', sans-serif;
   }
 }
+
+@media screen and (max-width: $tablet) {
+  .wrapper {
+    height: 260px;
+    padding: 80px 40px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .wrapper {
+    height: 320px;
+    padding: 60px 20px;
+
+    &--unlock {
+      background: bottom right no-repeat url('/src/assets/unlock-mobile.svg');
+    }
+    &--enable {
+      background: bottom right no-repeat url('/src/assets/enable-mobile.svg');
+    }
+    &--leverage {
+      background: bottom right no-repeat url('/src/assets/leverage-mobile.svg');
+    }
+    &--auto-degen {
+      background: bottom right no-repeat
+        url('/src/assets/auto-degen-mobile.svg');
+    }
+
+    .title {
+      margin-bottom: 8px;
+    }
+  }
+}

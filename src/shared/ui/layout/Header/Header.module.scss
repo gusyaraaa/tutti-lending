@@ -3,20 +3,21 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 110px;
+  height: var(--headerHeight);
   background-color: rgba(16, 16, 16, 0.05);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
   z-index: 10;
 
   .content {
-    z-index: 12;
+    z-index: 11;
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1112px;
-    height: 110px;
+    height: 100%;
     margin: 0 auto;
+    padding: 0 25px;
 
     .logo {
       flex: 1 0 auto;
@@ -26,29 +27,92 @@
       }
     }
 
-    .pageLinks {
+    .menu {
       flex: 0 1 auto;
-      display: flex;
-      align-items: center;
-      gap: 25px;
 
-      .link {
-        position: relative;
-        cursor: pointer;
+      .pageLinks {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+    }
+  }
+}
 
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0;
-          height: 1px;
-          background-color: var(--colorText);
-          transition: width 0.2s ease-in-out;
+@media screen and (max-width: $mobile) {
+  .wrapper {
+    height: var(--headerMobileHeight);
+
+    &-active {
+      backdrop-filter: none;
+    }
+
+    .content {
+      .logo {
+        z-index: 1;
+
+        svg {
+          width: 70px;
+          height: 20px;
+        }
+      }
+
+      .menu {
+        &-active {
+          .hamburger {
+            transform: rotate(45deg);
+          }
+          .hamburger::before {
+            opacity: 0;
+          }
+          .hamburger::after {
+            transform: rotate(90deg) translateX(-8px);
+          }
+          .pageLinks {
+            transform: translateY(100vh);
+          }
         }
 
-        &:hover::after {
-          width: 100%;
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+          z-index: 1;
+          height: 2px;
+          background-color: #fff;
+          border-radius: 2px;
+          transition: all 0.3s ease-in-out;
+        }
+        .hamburger {
+          position: relative;
+          width: 24px;
+          cursor: pointer;
+
+          &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            top: -8px;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            top: 8px;
+          }
+        }
+        .pageLinks {
+          position: fixed;
+          top: -100vh;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          width: 100vw;
+          height: 100vh;
+          padding: calc(var(--headerMobileHeight) + 25px) 25px 25px;
+          background-color: rgba(16, 16, 16, 0.05);
+          backdrop-filter: blur(10px);
+          transition: transform 0.3s ease-in-out;
         }
       }
     }

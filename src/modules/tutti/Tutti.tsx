@@ -2,12 +2,14 @@ import cns from 'classnames'
 
 import { Text } from 'shared/ui/common/Text'
 import { Tab, Tabs } from 'shared/ui/common/Tabs'
+import { useMediaBreakpoints } from 'shared/hooks/useMediaBreakpoints'
 import { useVisibleOnScroll } from 'shared/hooks/useVisibleOnScroll'
 import { PropositionCard } from './ui/PropositionCard/PropositionCard'
 
 import s from './Tutti.module.scss'
 
 export const Tutti = () => {
+  const { isMobile, isTablet } = useMediaBreakpoints()
   const { ref: propositionRef, isVisible } = useVisibleOnScroll({
     threshold: 0.4,
   })
@@ -15,10 +17,14 @@ export const Tutti = () => {
   return (
     <div className={s.wrapper}>
       <div className={s.title}>
-        <Text size={64} weight={700} isUppercased>
+        <Text
+          size={isMobile ? 28 : isTablet ? 48 : 64}
+          weight={700}
+          isUppercased
+        >
           Tutti Is a cross-chain liquidity market
         </Text>
-        <Text size={32} color="secondary">
+        <Text size={isMobile ? 18 : isTablet ? 24 : 32} color="secondary">
           For native bitcoin to EVM chains without a bridge.
         </Text>
       </div>
@@ -28,15 +34,17 @@ export const Tutti = () => {
           [s['proposition--visible']]: isVisible,
         })}
       >
-        <Text
-          size={32}
-          weight={700}
-          isUppercased
-          isCentered
-          className={s.propositionTitle}
-        >
-          Value Proposition
-        </Text>
+        {!isMobile && (
+          <Text
+            size={32}
+            weight={700}
+            isUppercased
+            isCentered
+            className={s.propositionTitle}
+          >
+            Value Proposition
+          </Text>
+        )}
         <Tabs>
           <Tab title="Unlock">
             <PropositionCard
