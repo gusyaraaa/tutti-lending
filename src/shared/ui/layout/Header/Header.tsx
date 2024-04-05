@@ -39,14 +39,11 @@ const AppHeader = () => {
             <HeaderLink href="#" onClick={handleLinkClick}>
               $Tutti
             </HeaderLink>
-            <HeaderLink href="#actors" onClick={handleLinkClick}>
-              Actors
-            </HeaderLink>
             <HeaderLink href="#flows" onClick={handleLinkClick}>
               Flows
             </HeaderLink>
-            <HeaderLink href="#use-cases" onClick={handleLinkClick}>
-              Use cases
+            <HeaderLink href="#utility" onClick={handleLinkClick}>
+              Utility
             </HeaderLink>
             <HeaderLink href="#lightpaper" onClick={handleLinkClick}>
               Lightpaper

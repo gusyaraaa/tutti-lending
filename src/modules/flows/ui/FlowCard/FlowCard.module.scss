@@ -1,3 +1,4 @@
+// TODO: check padding and margins for responsive styles
 .wrapper {
   .title {
     display: flex;
@@ -11,7 +12,7 @@
       display: flex;
       align-items: center;
       border-radius: 40px;
-      border: 1px solid #2f80ed;
+      border: 1px solid var(--colorTextGold);
     }
   }
 
@@ -22,9 +23,6 @@
     border: 1px solid #333333;
     border-radius: 16px;
 
-    &--bitcoin {
-      background: bottom / contain no-repeat url('/src/assets/bitcoin.png');
-    }
     &--evm {
       background: bottom / contain no-repeat url('/src/assets/evm.png');
     }
@@ -32,12 +30,15 @@
       background: bottom / contain no-repeat url('/src/assets/gearbox.png');
     }
   }
-  .cardTitle,
-  .cardDescription {
+  .cardTitle {
     margin-bottom: 8px;
+  }
+  .cardDescription {
+    margin-bottom: 24px;
   }
 }
 
+// TODO: it shouldn't be a $mobile, recheck design
 @media screen and (max-width: $mobile) {
   .wrapper {
     .title {
@@ -65,9 +66,6 @@
       height: 200px;
       padding: 29px 4px;
 
-      &--bitcoin {
-        background: center / contain no-repeat url('/src/assets/bitcoin.png');
-      }
       &--evm {
         background: center / contain no-repeat url('/src/assets/evm.png');
       }

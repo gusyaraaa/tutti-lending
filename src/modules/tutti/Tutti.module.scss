@@ -1,45 +1,45 @@
+// TODO: check padding and margins for responsive styles
 .wrapper {
   position: relative;
-  padding-top: calc(var(--headerHeight) + 170px);
+  padding-top: calc(var(--headerHeight) + 110px);
 
   &::after {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: calc(100% - 2px);
+    width: 100%;
+    height: 100%;
+    filter: blur(50px);
     background: top / cover no-repeat url('/src/assets/radial-bg.svg');
-    z-index: -2;
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 1px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 300px;
-    background: linear-gradient(
-      to bottom,
-      rgba(16, 16, 16, 0) 0%,
-      rgba(16, 16, 16, 1) 100%
-    );
+    animation: rotate 30s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
+    transform-origin: center;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     z-index: -1;
   }
 
-  .title {
+  .titleWrapper {
     padding: 20px 0;
     display: flex;
     flex-direction: column;
     gap: 16px;
     text-align: center;
-    margin-bottom: 51px;
+    margin-bottom: 70px;
+
+    .title {
+      line-height: 60px;
+
+      &--bitcoin {
+        background: linear-gradient(152deg, #e6dccd 1.09%, #cca766 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
   }
 
   .proposition {
-    padding-bottom: 162px;
+    padding-bottom: 171px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 
@@ -48,8 +48,17 @@
     }
 
     .propositionTitle {
-      margin-bottom: 37px;
+      margin-bottom: 16px;
     }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
   }
 }
 
@@ -61,7 +70,7 @@
 
 @media screen and (max-width: $tablet) {
   .wrapper {
-    .title {
+    .titleWrapper {
       margin-bottom: 60px;
     }
 
@@ -79,7 +88,7 @@
   .wrapper {
     padding-top: calc(var(--headerMobileHeight) + 60px);
 
-    .title {
+    .titleWrapper {
       margin-bottom: 40px;
     }
 

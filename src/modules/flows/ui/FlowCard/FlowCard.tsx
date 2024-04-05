@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { Fragment, memo } from 'react'
 import cns from 'classnames'
 
 import { Text } from 'shared/ui/common/Text'
@@ -11,7 +11,7 @@ type Props = {
   label: string
   title: string
   description: string
-  iconId: 'bitcoin' | 'evm' | 'gearbox'
+  iconId: 'evm' | 'gearbox'
 }
 
 export const FlowCard = ({ tag, label, title, description, iconId }: Props) => {
@@ -23,7 +23,12 @@ export const FlowCard = ({ tag, label, title, description, iconId }: Props) => {
         {title}
       </Text>
       <Text size={18} color="secondary" className={s.cardDescription}>
-        {description}
+        {description.split('\\n').map((part, index) => (
+          <Fragment key={index}>
+            {index !== 0 ? <br /> : <></>}
+            {part}
+          </Fragment>
+        ))}
       </Text>
     </>
   ))
@@ -31,7 +36,12 @@ export const FlowCard = ({ tag, label, title, description, iconId }: Props) => {
   return (
     <div className={s.wrapper}>
       <div className={s.title}>
-        <Text size={isMobile ? 16 : 20} weight={700} className={s.tag}>
+        <Text
+          size={isMobile ? 16 : 18} // TODO: check mobile size
+          weight={700}
+          color="gold"
+          className={s.tag}
+        >
           {tag}
         </Text>
         <Text size={isMobile ? 20 : 24} weight={700} isUppercased>

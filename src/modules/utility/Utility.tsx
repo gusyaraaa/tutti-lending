@@ -22,8 +22,8 @@ export const Utility = () => {
   })
 
   return (
-    <div className={s.wrapper}>
-      <Text size={16} weight={700} className={s.sectionTitle}>
+    <div className={s.wrapper} id="utility">
+      <Text size={24} weight={700} className={s.sectionTitle}>
         Utility
       </Text>
       <div className={s.title}>

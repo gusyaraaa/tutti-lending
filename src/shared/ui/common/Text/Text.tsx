@@ -21,7 +21,7 @@ type TextSize =
   | 48
   | 64
 type TextWeight = 400 | 500 | 600 | 700
-type TextColor = 'default' | 'secondary' | 'dark'
+type TextColor = 'default' | 'secondary' | 'dark' | 'gold'
 
 type TextParams = {
   size?: TextSize

@@ -16,16 +16,22 @@ export const Tutti = () => {
 
   return (
     <div className={s.wrapper}>
-      <div className={s.title}>
+      <div className={s.titleWrapper}>
         <Text
           size={isMobile ? 28 : isTablet ? 48 : 64}
           weight={700}
           isUppercased
+          className={s.title}
         >
-          Tutti Is a cross-chain liquidity market
+          TUTTI IS A CROSS-CHAIN{' '}
+          <span className={s['title--bitcoin']}>BITCOIN</span> LIQUIDITY MARKET
         </Text>
-        <Text size={isMobile ? 18 : isTablet ? 24 : 32} color="secondary">
-          For native bitcoin to EVM chains without a bridge.
+        <Text
+          size={isMobile ? 18 : isTablet ? 24 : 32}
+          weight={600}
+          color="secondary"
+        >
+          Native bitcoin to EVM chains without a bridge
         </Text>
       </div>
       <div

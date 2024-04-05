@@ -27,19 +27,14 @@ const AppFooter = () => {
                 $Tutti
               </Text>
             </a>
-            <a href="#actors">
-              <Text size={16} className={s.link}>
-                Actors
-              </Text>
-            </a>
             <a href="#flows">
               <Text size={16} className={s.link}>
                 Flows
               </Text>
             </a>
-            <a href="#use-cases">
+            <a href="#utility">
               <Text size={16} className={s.link}>
-                Use cases
+                Utility
               </Text>
             </a>
             <a href="#lightpaper">

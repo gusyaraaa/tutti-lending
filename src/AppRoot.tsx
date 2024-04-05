@@ -2,7 +2,7 @@ import { AppLayout } from 'shared/ui/layout/AppLayout'
 
 import { Tutti } from 'modules/tutti'
 import { Utility } from 'modules/utility'
-import { ActorsFlows } from 'modules/actorsFlows'
+import { Flows } from 'modules/flows'
 
 import 'styles/fonts.scss'
 import 'styles/global.scss'
@@ -12,8 +12,8 @@ export const AppRoot = () => {
   return (
     <AppLayout>
       <Tutti />
+      <Flows />
       <Utility />
-      <ActorsFlows />
     </AppLayout>
   )
 }
