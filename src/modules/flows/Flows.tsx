@@ -23,11 +23,11 @@ export const Flows = () => {
         })}
       >
         <FlowCard
-          tag="EVM Chains"
+          tag="With Bitcoin"
           label="lvl1: Multichain"
-          title="User deposits stEth on Tutti on Ethereum"
-          description="User deposits stEth on Tutti on Ethereum and borrows USDC on Arbitrum.\nTutti checks collateral state via Quantum Portal and allows borrowing if collateral health allows."
-          iconId="evm"
+          title="User deposits native BTC"
+          description="Deposits as collateral via Quantum Portal, borrows LRTs on Ethereum."
+          iconId="bitcoin"
         />
         <FlowCard
           tag="Gearbox"

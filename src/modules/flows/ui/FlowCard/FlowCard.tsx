@@ -11,7 +11,7 @@ type Props = {
   label: string
   title: string
   description: string
-  iconId: 'evm' | 'gearbox'
+  iconId: 'bitcoin' | 'gearbox'
 }
 
 export const FlowCard = ({ tag, label, title, description, iconId }: Props) => {

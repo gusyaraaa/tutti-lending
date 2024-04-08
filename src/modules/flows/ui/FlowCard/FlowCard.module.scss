@@ -23,8 +23,8 @@
     border: 1px solid #333333;
     border-radius: 16px;
 
-    &--evm {
-      background: bottom / contain no-repeat url('/src/assets/evm.png');
+    &--bitcoin {
+      background: bottom / contain no-repeat url('/src/assets/bitcoin.png');
     }
     &--gearbox {
       background: bottom / contain no-repeat url('/src/assets/gearbox.png');
@@ -38,8 +38,7 @@
   }
 }
 
-// TODO: it shouldn't be a $mobile, recheck design
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $tablet) {
   .wrapper {
     .title {
       margin-bottom: 10;
@@ -66,8 +65,8 @@
       height: 200px;
       padding: 29px 4px;
 
-      &--evm {
-        background: center / contain no-repeat url('/src/assets/evm.png');
+      &--bitcoin {
+        background: center / contain no-repeat url('/src/assets/bitcoin.png');
       }
       &--gearbox {
         background: center / contain no-repeat url('/src/assets/gearbox.png');
