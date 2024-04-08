@@ -15,10 +15,10 @@ export const Utility = () => {
   })
   const { ref: incentiveRef, isVisible: isIncentiveVisible } =
     useVisibleOnScroll({
-      threshold: isMobile ? 0.3 : 0.9,
+      threshold: isMobile ? 0.3 : 0.7,
     })
   const { ref: votingRef, isVisible: isVotingVisible } = useVisibleOnScroll({
-    threshold: isMobile ? 0.3 : 0.7,
+    threshold: isMobile ? 0.3 : 0.4,
   })
 
   return (
@@ -37,13 +37,6 @@ export const Utility = () => {
         </Text>
       </div>
       <div className={s.content}>
-        <Text
-          size={isMobile ? 28 : isTablet ? 48 : 64}
-          weight={700}
-          isUppercased
-        >
-          UTILITY
-        </Text>
         <UtilitySVG className={s.image} />
         <div
           ref={stakersRef}

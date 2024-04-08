@@ -62,7 +62,7 @@
       }
 
       &--stakers {
-        top: 132px;
+        top: -50px;
         left: 0;
         padding: 24px 40px 24px 27px;
         text-align: right;
@@ -76,7 +76,7 @@
         }
       }
       &--incentive {
-        top: 223px;
+        top: 100px;
         right: 0;
         padding: 24px 27px 24px 40px;
 
@@ -89,7 +89,7 @@
         }
       }
       &--voting {
-        top: 524px;
+        top: 350px;
         left: 50%;
         transform: translateX(-50%);
         padding: 24px 60px 24px 40px;

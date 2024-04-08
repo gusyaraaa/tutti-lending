@@ -44,11 +44,10 @@ export const Tutti = () => {
           <Text
             size={32}
             weight={700}
-            isUppercased
             isCentered
             className={s.propositionTitle}
           >
-            Value Proposition
+            What does Tutti do?
           </Text>
         )}
         <Tabs>
