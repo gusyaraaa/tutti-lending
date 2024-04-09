@@ -1,11 +1,10 @@
-// TODO: check padding and margins for responsive styles
 .wrapper {
-  padding-bottom: 220px;
+  padding-bottom: 160px;
 
   .sectionTitle {
     position: relative;
     width: fit-content;
-    margin: 0 auto 60px;
+    margin: 0 auto 40px;
     padding: 24px 32px;
     font-family: 'Aber Mono', sans-serif;
     color: var(--colorSectionGold);
@@ -18,17 +17,18 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 621px;
-      height: 500px;
-      background: center / contain no-repeat
-        url('/src/assets/sectionTitle-bg.svg');
+      width: 220px;
+      height: 100px;
+      border-radius: 100%;
+      background: linear-gradient(101deg, #f00 0%, #ffdb00 100%);
+      filter: blur(100px);
       z-index: -1;
     }
   }
   .flows {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 80px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 
@@ -38,43 +38,11 @@
   }
 }
 
-@media screen and (max-width: $desktopSmall) {
-  .wrapper {
-    padding-top: 119px;
-    padding-bottom: 230px;
-    .flows {
-      padding-top: 179px;
-    }
-  }
-}
-
-@media screen and (max-width: $laptop) {
-  .wrapper {
-    padding-top: 150px;
-    padding-bottom: 170px;
-    .flows {
-      padding-top: 130px;
-    }
-  }
-}
-
-@media screen and (max-width: $tablet) {
-  .wrapper {
-    padding-top: 120px;
-    padding-bottom: 120px;
-    .flows {
-      padding-top: 76px;
-      gap: 80px;
-    }
-  }
-}
-
 @media screen and (max-width: $mobile) {
   .wrapper {
-    padding-top: 90px;
-    padding-bottom: 110px;
+    padding-bottom: 120px;
+
     .flows {
-      padding-top: 70px;
       gap: 40px;
     }
   }

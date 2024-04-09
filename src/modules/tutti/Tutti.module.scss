@@ -1,4 +1,3 @@
-// TODO: check padding and margins for responsive styles
 .wrapper {
   position: relative;
   padding-top: calc(var(--headerHeight) + 110px);
@@ -19,15 +18,14 @@
   }
 
   .titleWrapper {
-    padding: 20px 0;
     display: flex;
     flex-direction: column;
     gap: 16px;
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 80px;
 
     .title {
-      line-height: 60px;
+      line-height: 86%;
 
       &--bitcoin {
         background: linear-gradient(152deg, #e6dccd 1.09%, #cca766 100%);
@@ -39,7 +37,7 @@
   }
 
   .proposition {
-    padding-bottom: 171px;
+    padding-bottom: 170px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 
@@ -62,38 +60,16 @@
   }
 }
 
-@media screen and (max-width: $desktopSmall) {
-  .wrapper {
-    padding-top: calc(var(--headerHeight) + 100px);
-  }
-}
-
-@media screen and (max-width: $tablet) {
-  .wrapper {
-    .titleWrapper {
-      margin-bottom: 60px;
-    }
-
-    .proposition {
-      padding-bottom: 120px;
-
-      .propositionTitle {
-        margin-bottom: 32px;
-      }
-    }
-  }
-}
-
 @media screen and (max-width: $mobile) {
   .wrapper {
-    padding-top: calc(var(--headerMobileHeight) + 60px);
+    padding-top: calc(var(--headerMobileHeight) + 40px);
 
     .titleWrapper {
       margin-bottom: 40px;
     }
 
     .proposition {
-      padding-bottom: 90px;
+      padding-bottom: 120px;
     }
   }
 }

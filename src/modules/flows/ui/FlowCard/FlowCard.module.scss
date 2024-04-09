@@ -1,4 +1,3 @@
-// TODO: check padding and margins for responsive styles
 .wrapper {
   .title {
     display: flex;
@@ -18,7 +17,6 @@
 
   .card {
     height: 695px;
-    padding: 60px 40px 0;
     background-color: #101010;
     border: 1px solid #333333;
     border-radius: 16px;
@@ -30,21 +28,22 @@
       background: bottom / contain no-repeat url('/src/assets/gearbox.png');
     }
   }
-  .cardTitle {
-    margin-bottom: 8px;
-  }
-  .cardDescription {
-    margin-bottom: 24px;
+  .content {
+    padding: 70px 40px 47px;
+
+    .contentTitle {
+      margin-bottom: 8px;
+    }
   }
 }
 
 @media screen and (max-width: $tablet) {
   .wrapper {
-    .title {
-      margin-bottom: 10;
-    }
     .card {
       height: 600px;
+    }
+    .content {
+      padding-bottom: 78px;
     }
   }
 }
@@ -54,22 +53,31 @@
     .title {
       flex-direction: column;
       align-items: start;
-      gap: 8px;
-      margin-bottom: 18;
+      gap: 16px;
+      margin-bottom: 8px;
 
       .tag {
         height: 40px;
       }
     }
     .card {
-      height: 200px;
-      padding: 29px 4px;
+      height: 370px;
 
       &--bitcoin {
-        background: center / contain no-repeat url('/src/assets/bitcoin.png');
+        background: center / contain no-repeat
+          url('/src/assets/bitcoin-mobile.png');
       }
       &--gearbox {
-        background: center / contain no-repeat url('/src/assets/gearbox.png');
+        background: center / contain no-repeat
+          url('/src/assets/gearbox-mobile.png');
+      }
+    }
+    .content {
+      padding: 0;
+      margin-bottom: 16px;
+
+      .contentTitle {
+        margin-bottom: 16px;
       }
     }
   }

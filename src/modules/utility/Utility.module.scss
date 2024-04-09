@@ -1,12 +1,10 @@
-// TODO: check padding and margins for responsive styles
-// moved padding-bottom for absolute position from .wrapper to .content
 .wrapper {
-  padding-bottom: 200px;
+  padding-bottom: 220px;
 
   .sectionTitle {
     position: relative;
     width: fit-content;
-    margin: 0 auto 60px;
+    margin: 0 auto 40px;
     padding: 24px 32px;
     font-family: 'Aber Mono', sans-serif;
     color: var(--colorSectionGold);
@@ -19,10 +17,11 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 621px;
-      height: 500px;
-      background: center / contain no-repeat
-        url('/src/assets/sectionTitle-bg.svg');
+      width: 220px;
+      height: 100px;
+      border-radius: 100%;
+      background: linear-gradient(101deg, #f00 0%, #ffdb00 100%);
+      filter: blur(100px);
       z-index: -1;
     }
   }
@@ -39,7 +38,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 72px;
+    gap: 40px;
 
     .card {
       position: absolute;
@@ -98,27 +97,11 @@
         &::after {
           width: 237px;
           height: 80px;
-          top: calc(402px - 48px - 200%);
+          top: calc(400px - 48px - 200%);
           left: 65px;
           transform: translateY(-100%);
           background: top / contain no-repeat
             url('/src/assets/utility-lineBottom.svg');
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: $desktopSmall) {
-  .wrapper {
-    padding-bottom: 175px;
-
-    .content {
-      gap: 107px;
-
-      .card {
-        &--voting {
-          top: calc(524px + 24px);
         }
       }
     }
@@ -134,25 +117,10 @@
           height: 83px;
         }
 
-        &--stakers {
-          &::after {
-            top: calc(326px - 50%);
-            left: 93px;
-          }
-        }
-        &--incentive {
-          &::after {
-            top: calc(243px - 24px - 100%);
-            right: 92px;
-          }
-        }
         &--voting {
-          top: calc(493px + 48px);
-
           &::after {
             width: 212px;
             height: 71px;
-            left: 90px;
           }
         }
       }
@@ -162,14 +130,7 @@
 
 @media screen and (max-width: $tablet) {
   .wrapper {
-    padding-bottom: 200px;
-
-    .title {
-      margin-bottom: 100px;
-    }
     .content {
-      gap: 120px;
-
       .image {
         height: 250px;
       }
@@ -183,33 +144,20 @@
         }
 
         &--stakers {
-          top: 115px;
           padding: 24px 20px 24px 14px;
-
-          &::after {
-            top: calc(292px + 24px - 50%);
-            left: 112px;
-          }
         }
         &--incentive {
-          top: 246px;
           padding: 24px 14px 24px 20px;
-
-          &::after {
-            top: calc(236px - 100%);
-            right: 112px;
-          }
         }
         &--voting {
-          top: calc(457px + 24px);
+          top: 300px;
           width: 388px;
           padding: 24px 10px 24px 20px;
 
           &::after {
+            top: calc(250px - 24px - 100%);
             width: 141px;
             height: 75px;
-            left: 53px;
-            top: calc(372px + 48px - 200%);
           }
         }
       }
@@ -219,21 +167,14 @@
 
 @media screen and (max-width: $mobile) {
   .wrapper {
-    padding-bottom: 0;
+    padding-bottom: 80px;
 
-    .sectionTitle {
-      margin-bottom: 50px;
-    }
     .title {
-      margin-bottom: 70px;
+      gap: 25px;
+      margin-bottom: 40px;
     }
     .content {
-      gap: 20px;
-
-      .image {
-        margin-top: 19px;
-        margin-bottom: 33px;
-      }
+      padding: 0;
 
       .card {
         position: relative;

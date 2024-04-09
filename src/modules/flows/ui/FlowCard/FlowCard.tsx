@@ -18,11 +18,11 @@ export const FlowCard = ({ tag, label, title, description, iconId }: Props) => {
   const { isMobile } = useMediaBreakpoints()
 
   const CardContent = memo(() => (
-    <>
-      <Text size={24} weight={700} className={s.cardTitle}>
+    <div className={s.content}>
+      <Text size={24} weight={700} className={s.contentTitle}>
         {title}
       </Text>
-      <Text size={18} color="secondary" className={s.cardDescription}>
+      <Text size={18} color="secondary" className={s.contentDescription}>
         {description.split('\\n').map((part, index) => (
           <Fragment key={index}>
             {index !== 0 ? <br /> : <></>}
@@ -30,14 +30,14 @@ export const FlowCard = ({ tag, label, title, description, iconId }: Props) => {
           </Fragment>
         ))}
       </Text>
-    </>
+    </div>
   ))
 
   return (
     <div className={s.wrapper}>
       <div className={s.title}>
         <Text
-          size={isMobile ? 16 : 18} // TODO: check mobile size
+          size={isMobile ? 16 : 20}
           weight={700}
           color="gold"
           className={s.tag}
