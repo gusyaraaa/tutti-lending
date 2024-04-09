@@ -20,6 +20,7 @@
       width: 220px;
       height: 100px;
       border-radius: 100%;
+      background: -webkit-linear-gradient(101deg, #f00 0%, #ffdb00 100%);
       background: linear-gradient(101deg, #f00 0%, #ffdb00 100%);
       filter: blur(100px);
       z-index: -1;

@@ -11,7 +11,7 @@ import s from './Tutti.module.scss'
 export const Tutti = () => {
   const { isMobile, isTablet } = useMediaBreakpoints()
   const { ref: propositionRef, isVisible } = useVisibleOnScroll({
-    threshold: 0.6,
+    threshold: 0.45,
   })
 
   return (
