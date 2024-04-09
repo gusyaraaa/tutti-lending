@@ -22,7 +22,7 @@ export const FlowCard = ({ tag, label, title, description, iconId }: Props) => {
       <Text size={24} weight={700} className={s.contentTitle}>
         {title}
       </Text>
-      <Text size={18} color="secondary" className={s.contentDescription}>
+      <Text size={18} color="secondary">
         {description.split('\\n').map((part, index) => (
           <Fragment key={index}>
             {index !== 0 ? <br /> : <></>}
