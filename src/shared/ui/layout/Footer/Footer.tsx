@@ -55,9 +55,15 @@ const AppFooter = () => {
       </div>
       <div className={s.additional}>
         <div className={s.socials}>
-          <XSVG />
-          <TelegramSVG />
-          <DiscordSVG />
+          <a href="https://twitter.com/TuttiLabs" target="_blank">
+            <XSVG />
+          </a>
+          <a href="https://t.me/tutti_official" target="_blank">
+            <TelegramSVG />
+          </a>
+          <a href="https://discord.gg/zxs6hVvP" target="_blank">
+            <DiscordSVG />
+          </a>
         </div>
         <div className={s.agreements}>
           <Text size={16} color="dark">
