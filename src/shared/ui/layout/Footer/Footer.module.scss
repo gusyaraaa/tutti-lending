@@ -42,15 +42,23 @@
     }
   }
   .additional {
-    padding: 24px 0 20px;
+    padding: 24px 0;
     display: flex;
     justify-content: space-between;
 
+    .socials {
+      display: flex;
+      gap: 24px;
+
+      svg:hover {
+        cursor: pointer;
+      }
+    }
     .agreements {
       display: flex;
       gap: 24px;
 
-      > div {
+      > div:not(.stamp) {
         cursor: pointer;
 
         &:hover {
@@ -64,7 +72,7 @@
 @media screen and (max-width: $mobile) {
   .wrapper {
     .content {
-      height: 70px;
+      height: 90px;
 
       .logo {
         text-align: center;
@@ -76,17 +84,19 @@
       }
     }
     .additional {
-      padding: 20px 0;
+      padding: 32px 0 18px;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
+      gap: 32px;
 
-      .stamp {
+      .socials {
+        order: 1;
+      }
+      .agreements {
         order: 2;
       }
-
-      .agreements {
-        order: 1;
+      .stamp {
+        order: 3;
       }
     }
   }

@@ -4,6 +4,9 @@ import { Text } from 'shared/ui/common/Text'
 import { useMediaBreakpoints } from 'shared/hooks/useMediaBreakpoints'
 
 import LogoSVG from 'assets/logo.svg'
+import XSVG from 'assets/x.svg'
+import TelegramSVG from 'assets/telegram.svg'
+import DiscordSVG from 'assets/discord.svg'
 
 import s from './Footer.module.scss'
 
@@ -51,9 +54,11 @@ const AppFooter = () => {
         )}
       </div>
       <div className={s.additional}>
-        <Text size={16} color="dark" className={s.stamp}>
-          ©2024 tutti
-        </Text>
+        <div className={s.socials}>
+          <XSVG />
+          <TelegramSVG />
+          <DiscordSVG />
+        </div>
         <div className={s.agreements}>
           <Text size={16} color="dark">
             Privacy Policy
@@ -61,7 +66,17 @@ const AppFooter = () => {
           <Text size={16} color="dark">
             Legal notice
           </Text>
+          {!isMobile && (
+            <Text size={16} color="dark" className={s.stamp}>
+              ©2024 tutti
+            </Text>
+          )}
         </div>
+        {isMobile && (
+          <Text size={16} color="dark" className={s.stamp}>
+            ©2024 tutti
+          </Text>
+        )}
       </div>
     </div>
   )
