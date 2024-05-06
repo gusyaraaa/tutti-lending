@@ -1,5 +1,5 @@
 # Deployed on:
-https://master--tutti-lending.netlify.app
+https://itutti.tech
 
 # React + TypeScript + Vite
 
